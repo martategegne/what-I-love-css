@@ -1,16 +1,385 @@
-/* h1 styling */
 
-h1{
+/* styling the table */
+.content-table {
+  margin: 10px;
+    width: 100%;
+    border-collapse:collapse;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.content-table thead th{
   color: blue;
-  background-color: aqua;
-}
-/* h2 styling  */
-h2{
-  color: darkmagenta;
 }
 
-/* h3 styling */
-h3{
-color: chocolate;
+/* ?????????/// I don't know why this has no efect on the table. */
+
+
+
+  /* Basic Table Styling */
+table {
+    width: 100%; /* Make table span full width of its container */
+    border-collapse: collapse; /* Collapses borders between cells */
+    margin: 20px 0; /* Add some space above and below the table */
+    font-family: Arial, sans-serif; /* Basic font */
 }
 
+/* Table Header (th) Styling */
+ thead th {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 12px 15px; /* Padding inside cells */
+    text-align: left; /* Align text to the left */
+    border-bottom: 2px solid #ddd; /* Bottom border for headers */
+}
+
+/* Table Data (td) Styling */
+ tbody td {
+    padding: 10px 15px; /* Padding inside cells */
+    border-bottom: 1px solid #ddd; /* Bottom border for data cells */
+    vertical-align: top; /* Align content to the top */
+}
+
+/* Alternating Row Colors (Zebra Striping) */
+  tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray for even rows */
+}
+
+/* Hover Effect on Rows */
+  tbody tr:hover {
+    background-color: #ddd; /* Darker gray on hover */
+    cursor: pointer; /* Indicate it's clickable (even if it's not) */
+}
+
+/* First Column (Product Name) Styling */
+ tbody td:first-child {
+    font-weight: bold; /* Make product name bold */
+}
+
+/* Last Column (Stock) Styling - Example of targeting specific columns */
+  tbody td:last-child {
+    text-align: center; /* Center align stock numbers */
+}
+
+
+
+/* second styling */
+
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+/* styling the body */
+body {
+    margin: 0; /* Already there, good! */
+    padding: 15px; /* Already there, good! */
+    line-height: 1.6; /* Already there, good! */
+    font-family: 'Arial', sans-serif; /* Use a web-safe font or import custom */
+    color: #333; /* Default text color for the whole page */
+    background-color: #f8f8f8; /* Light background for the page */
+}
+
+/* styling the main */
+main {
+    max-width: 1200px; /* Or a width that suits your design */
+    margin: 20px auto; /* Centers the main content block horizontally */
+    padding: 0 15px; /* Adds horizontal padding inside the main content for smaller screens */
+}
+
+
+/* ensuuring the responsiveness of video and image */
+img, video {
+    max-width: 100%; /* Images/videos won't overflow their containers */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Removes extra space below images (if any) */
+}
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (height / width = 9 / 16 = 0.5625) */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 20px; /* Space below the video */
+}
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* styling header layout */
+header {
+    background-color: #333;
+    padding: 15px 0;
+    text-align: center; /* Fallback for older browsers */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+header nav {
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: center; /* Center the links */
+    align-items: center;
+    max-width: 1200px; /* Match main content width */
+    margin: 0 auto;
+    padding: 0 15px; /* Padding for nav container */
+}
+
+.link_style {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px; /* Space around links */
+    margin: 0 5px; /* Space between links */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+    border-radius: 5px;
+}
+
+.link_style:hover {
+    background-color: #555;
+    color: #aqua; /* Match your h1 background for a theme */
+}
+
+/* Highlight the current page link (if on about.html) */
+.link_style[href="about.html"] {
+    background-color: #007bff; /* Example: highlight active page */
+    font-weight: bold;
+}
+
+/* styling the headings (h1, h2, h3)  */
+h1 {
+    color: #2c3e50; /* Darker, more professional blue/grey */
+    font-size: 2.5em; /* Larger for main title */
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #34495e; /* Slightly lighter than h1 */
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #7f8c8d; /* Subtler color */
+    font-size: 1.4em;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+
+/* styling the paragarph */
+
+.paragraph_styling {
+    font-size: 1em; /* Standard readable font size */
+    line-height: 1.7; /* Good for paragraphs */
+    margin-bottom: 1em; /* Space between paragraphs */
+    color: #444; /* Slightly softer text color */
+}
+
+.s1 .p1 {
+    /* If p1 is meant to constrain text width */
+    max-width: 800px; /* Adjust as needed */
+    margin: 0 auto; /* Center the paragraph block */
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-bottom: 30px; /* Space after this section */
+}
+
+/* styling the collections or image gallery */
+
+.im1 {
+    display: flex;
+    flex-wrap: wrap; /* Allow images to wrap to the next line */
+    justify-content: center; /* Center images horizontally */
+    gap: 15px; /* Space between images */
+    margin: 30px 0; /* Space above and below the image block */
+}
+
+.im1 img {
+    width: 200px; /* Or use flex-basis for more responsive width */
+    height: 150px; /* Fixed height, will crop if aspect ratio changes */
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease; /* Smooth hover effect */
+}
+
+.im1 img:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+
+/* styling the lists */
+ul {
+    list-style: none; /* Remove default bullets */
+    padding: 0; /* Remove default padding */
+    margin: 20px 0; /* Add space around the list */
+}
+
+ul li {
+    padding-left: 25px; /* Space for custom bullet */
+    position: relative; /* For custom bullet positioning */
+    margin-bottom: 10px; /* Space between list items */
+    color: #333; /* Default text color for list items */
+    line-height: 1.5;
+}
+
+ul li::before {
+    content: "✓"; /* Custom bullet point (e.g., checkmark) */
+    color: #4CAF50; /* Color for the custom bullet */
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* If you still want the bold text inside <li> to be separate */
+ul li b {
+    color: #007bff; /* Example: a blue for bolded text */
+}
+
+cite {
+    display: block; /* Makes cite a block element */
+    text-align: center;
+    font-style: italic;
+    margin-top: 30px;
+    font-size: 1.1em;
+    color: #666;
+    padding: 15px;
+    border-left: 5px solid #007bff;
+    background-color: #eaf6ff;
+    border-radius: 0 10px 10px 0;
+}
+
+
+
+/* styling the table for the second time */
+.content-table {
+    width: 100%;
+    border-collapse: collapse; /* Essential */
+    margin: 30px 0; /* Space above and below table */
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Add a subtle shadow to the table */
+    border-radius: 8px; /* Rounded corners for the table */
+    overflow: hidden; /* Ensures rounded corners apply to content */
+}
+
+.content-table caption {
+    font-weight: bold;
+    font-size: 1.3em;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    text-align: center;
+}
+
+.content-table thead th {
+    background-color: #007bff; /* A consistent blue for headers */
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 2px solid #0056b3; /* Darker blue for header bottom border */
+}
+
+.content-table tbody td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee; /* Lighter border for body rows */
+    vertical-align: middle; /* Center vertically for cleaner look */
+    color: #555;
+}
+
+/* Alternating Row Colors (Zebra Striping) */
+.content-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Lighter shade for even rows */
+}
+
+/* Hover Effect on Rows */
+.content-table tbody tr:hover {
+    background-color: #e0f2ff; /* Light blue on hover */
+    cursor: pointer;
+}
+
+/* First Column (e.g., Full name) Styling */
+.content-table tbody td:first-child {
+    font-weight: bold;
+    color: #222;
+}
+
+/* Last Column (e.g., Status) Styling */
+.content-table tbody td:last-child {
+    text-align: center;
+}
+
+/* Footer of the table */
+.content-table tfoot td {
+    background-color: #eaf6ff; /* Light blue background for footer */
+    padding: 15px;
+    font-weight: bold;
+    text-align: center;
+    border-top: 2px solid #b3d9ff; /* Border above footer */
+    color: #0056b3;
+    /* Apply border-bottom-left/right-radius to the very last cells if needed */
+}
+
+
+
+
+/* styling the footer */
+footer {
+    background-color: #333; /* Dark background */
+    color: white; /* White text */
+    padding: 30px 20px; /* Ample padding */
+    text-align: center;
+    margin-top: 50px; /* Space above the footer */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+footer p, footer address {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #aqua; /* Link color for footer */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #007bff; /* Hover effect */
+    text-decoration: underline;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Horizontal nav links */
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    margin-top: 20px;
+}
+
+footer nav ul li {
+    margin: 0 10px;
+    padding: 0; /* Remove default padding from li if using flex */
+}
+
+footer nav ul li a {
+    padding: 5px 10px; /* Padding for nav links in footer */
+    border-radius: 5px;
+    background-color: #555;
+}
+
+footer nav ul li a:hover {
+    background-color: #777;
+}
+
+/* i stayled the table for
+ the second time but the effect arsies from the 
+ second ignoring the first one */
