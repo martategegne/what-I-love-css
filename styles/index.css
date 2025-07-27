@@ -1,0 +1,31 @@
+
+
+/* styling h1 */
+h1{
+  color: red;
+}
+/* styling the links */
+.link{
+  color: green;
+}
+
+
+/* styling the buttons in index or home page. */
+.button{
+  color:green;
+  background-color:aqua;
+}
+/* styling h2 */
+h2{
+color: darkmagenta;
+}
+
+/* styling h3 */
+
+h3{
+color: blueviolet;
+
+}
+
+
+/* selector exercise */
