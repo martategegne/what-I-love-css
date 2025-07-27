@@ -1,31 +1,248 @@
 
+/* global styling */
 
-/* styling h1 */
-h1{
-  color: red;
+/* Universal Box-Sizing for easier layout */
+html {
+    box-sizing: border-box;
 }
-/* styling the links */
-.link{
-  color: green;
-}
-
-
-/* styling the buttons in index or home page. */
-.button{
-  color:green;
-  background-color:aqua;
-}
-/* styling h2 */
-h2{
-color: darkmagenta;
+*, *::before, *::after {
+    box-sizing: inherit;
 }
 
-/* styling h3 */
+body {
+    margin: 0;
+    padding: 0; /* Remove body padding here if main content handles it */
+    line-height: 1.6;
+    font-family: 'Arial', sans-serif; /* Use a web-safe font or import custom */
+    color: #333; /* Default text color */
+    background-color: #f8f8f8; /* Light background for the page */
+}
 
-h3{
-color: blueviolet;
+/* Remove default margins/paddings from elements often used for layout */
+h1, h2, h3, p, ul, ol, figure, address {
+    margin-top: 0;
+    margin-bottom: 0; /* Control spacing with specific margins below elements */
+}
 
+a {
+    text-decoration: none; /* Remove default underline from links */
+    color: inherit; /* Inherit color by default, set specifically later */
+}
+
+/* Responsive media */
+img, video {
+    max-width: 100%; /* Ensures images/videos scale down */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Removes extra space below inline images */
+}
+
+/* Centralize main content */
+main {
+    max-width: 1200px; /* Max width for content on large screens */
+    margin: 20px auto; /* Centers the main content area */
+    padding: 0 15px; /* Adds horizontal padding for smaller screens */
 }
 
 
-/* selector exercise */
+/* styling the header and navagation  */
+header {
+    background-color: #2c3e50; /* Darker header background */
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.main-nav {
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: center; /* Center navigation links */
+    align-items: center;
+    max-width: 1200px; /* Align with main content */
+    margin: 0 auto; /* Center the nav container */
+    padding: 0 15px; /* Inner padding */
+}
+
+.nav-link {
+    color: white;
+    padding: 10px 20px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nav-link:hover {
+    background-color: #34495e; /* Darker on hover */
+    color: #a2e8e8; /* Lighter color for hover text */
+}
+
+/* Highlight the active (current) page */
+.nav-link[href="index.html"] { /* This targets the Home link specifically */
+    background-color: #007bff; /* Example highlight color */
+    color: white;
+}
+
+/* styling the heading i.e (h1, h2, h3, h4-h6) */
+
+h1 {
+    color: #007bff; /* Primary brand color */
+    font-size: 2.8em;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+h2 {
+    color: #34495e;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #555;
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+/* styling the video */
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio (9/16 = 0.5625) */
+    height: 0;
+    overflow: hidden;
+    margin: 30px auto; /* Center video and add spacing */
+    max-width: 100%; /* Ensure it fits within main content */
+    background-color: black; /* Background while video loads/if error */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video fills the container */
+}
+
+/* styling image gallery in this page*/
+
+/* General styling for image galleries */
+.image-gallery, .new-arrivals-gallery {
+    display: flex;
+    flex-wrap: wrap; /* Allow images to wrap to new lines */
+    justify-content: center; /* Center images horizontally */
+    gap: 20px; /* Space between images */
+    margin: 40px 0; /* Space above and below galleries */
+}
+
+.image-gallery img, .new-arrivals-gallery img {
+    /* Set a base size for images, then let flexbox adjust */
+    width: 300px; /* Example fixed width */
+    height: 200px; /* Example fixed height */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-gallery img:hover, .new-arrivals-gallery img:hover {
+    transform: translateY(-8px) scale(1.02); /* Lift and slight scale effect */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.logo-image {
+    display: block; /* Ensure it's a block element */
+    margin: 40px auto; /* Center it horizontally with good spacing */
+    max-width: 250px; /* Control its size */
+    height: auto;
+}
+
+/* styling the button */
+
+.action-buttons {
+    text-align: center; /* Center the buttons */
+    margin: 50px 0; /* Space above and below button group */
+    display: flex; /* Use flexbox for button layout */
+    justify-content: center;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    gap: 20px; /* Space between buttons */
+}
+
+.button-style {
+    display: inline-block; /* Make the link behave like a block for padding/margin */
+    background-color: #007bff; /* Primary button color */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.button-style:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* styling the footer */
+
+footer {
+    background-color: #2c3e50; /* Darker footer background */
+    color: #ecf0f1; /* Light text color */
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 60px; /* Ample space above footer */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.15); /* Shadow for footer */
+}
+
+footer p, footer address {
+    margin-bottom: 10px;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+footer a {
+    color: #a2e8e8; /* Light blue-green for footer links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #007bff; /* Primary blue on hover */
+    text-decoration: underline;
+}
+
+.footer-nav ul {
+    list-style: none; /* Remove bullets */
+    padding: 0;
+    display: flex; /* Horizontal layout for footer nav */
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping */
+    margin-top: 25px;
+}
+
+.footer-nav ul li {
+    margin: 0 15px; /* Space between footer nav items */
+}
+
+.footer-nav ul li a {
+    padding: 5px 10px; /* Small padding for visual separation */
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.footer-nav ul li a:hover {
+    background-color: rgba(255,255,255,0.1); /* Subtle background on hover */
+}
