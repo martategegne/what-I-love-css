@@ -1,130 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>contact</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- the external css link goes here -->
+<title>contact</title>
+
+<!-- the external css link goes here -->
+
 <link rel="stylesheet" href="./styles/contact.css">
-
 </head>
 <body>
- <!-- link to other related web pages go here. -->
+    <div class="container">
+        <h1>Reach out! we are on in all your favorite platforms.</h1>
+        <h2>How to reach out</h2>
+        <div class="social-icons-container">
+            <img class="imgc" src="C:\NEXES_2025\What I love-CSS PROJECT\images\tik1.jpg" alt=" tiktok icon" width="120px" height="40px">
+            <img class="imgc" src="C:\NEXES_2025\What I love-CSS PROJECT\images\f1.jpg" alt=" facebook icon" width="120px" height="40px">
+            <img class="imgc" src="C:\NEXES_2025\What I love-CSS PROJECT\images\t1.jpg" alt=" Twitter icon" width="120px" height="40px">
+            <img class="imgc" src="C:\NEXES_2025\What I love-CSS PROJECT\images\y1.jpg" alt=" Youtube icon" width="120px" height="40px">
+        </div>
+        <br>
 
-   <a href="index.html">home</a>
- <a href="about.html">about</a>
- <a href="contact.html">contact</a>
- <a href="gallery.html">gallery</a>
-<!-- aviliable websites -->
- <h1>Reach out! we are on in all your favorite platforms.</h1>
-<h2>How to reach out</h2>
-<img src="C:\NEXES_2025\What I love-CSS PROJECT\images\tik1.jpg" 
-alt=" tiktok icon"  width="120px" height="40px">
-<img src="C:\NEXES_2025\What I love-CSS PROJECT\images\f1.jpg" 
-alt=" facebook icon"  width="120px" height="40px">
-<img src="C:\NEXES_2025\What I love-CSS PROJECT\images\t1.jpg" 
-alt=" Twitter icon"  width="120px" height="40px">
-<img src="C:\NEXES_2025\What I love-CSS PROJECT\images\y1.jpg" 
-alt=" Youtube icon" width="120px" height="40px">
-<br>
+        <h1>Get in Touch!</h1>
 
-<h1>Get in Touch!</h1>
+        <p class="paragraph">have a questions about our latest collections or an order?
+        <br>fill out the following form and we will get you back as soon as possible. </p>
 
-<p>have a questions about our latest collections or an order? 
-  <br>fill out the following form and we will get you back as soon as possible. </p>
+        <form>
+            <label class="Label1" for="countrySelect">Choose your Country:</label>
+            <select id="countrySelect" name="country" required>
+                <option value="">--Please select--</option>
+                <option value="usa">United States</option>
+                <option value="can">Canada</option>
+                <option value="mex">Canada</option>
+                <option value="eth">Ethiopia</option>
+            </select>
+            <label class="Label7" for="userComment">Your Comments:</label>
+            <textarea
+                id="userComment"
+                name="comment_text"
+                rows="3"
+                cols="50"
+                placeholder="Share your thoughts here..."
+                required
+                maxlength="500"
+            ></textarea>
+            <br><br>
 
+            <button class="button" >Submit</button>
+        </form>
+    </div>
 
-<!-- the form goes here -->
-
-    <label for="countrySelect">Choose your Country:</label>
-    <select id="countrySelect" name="country" required>
-    <option value="">--Please select--</option> 
-    <option value="usa">United States</option>
-    <option value="can">Canada</option>
-    <option value="mex">Mexico</option>
-    <option value="eth">Ethiopia</option>
-    </select>
-    <br>
-
-        <label for="citySelect">Choose your City:</label>
-    <select id="cityelect" name="city" required>
-    <option value="">--Please select--</option> 
-    <option value="usa">Nework</option>
-    <option value="can">Ottawa</option>
-    <option value="mex"> Mexico</option>
-    <option value="addis">Addis Ababa</option>
-</select>
-<br>
-    <label for="collectionSelect">Choose your collection type:</label>
-    <select id="collectionSelect" name="collection" required>
-    <option value="">--Please select--</option>
-     <option value="usa">Men collection</option>
-    <option value="can">Women collection</option>
-    <option value="mex">kids collection</option>
-    </select>
-    <br>
-    <h3>Some informations about our honored clients</h3>
-<label for="yourname">your name:</label>
-<input type="text" type="button" placeholder="Enter your name">
-<br>
-<label for="Email">Email:</label>
-<input type="email" placeholder="put your email here">
-<br>
-<label for="phone number">Phone number:</label>
-<input type="tel" placeholder="Put your phone number here">
-<br><br><br>
-
-<label for="userComment">Your Comments:</label>
-<textarea
-    id="userComment"
-    name="comment_text"
-    rows="3"
-    cols="50"
-    placeholder="Share your thoughts here..."
-    required
-    maxlength="500"
-></textarea>
-<br><br>
-
-<button>Submit</button>
-
-
- <br>   
-
-
- <!-- my footer goes here -->
-
- <footer>
-  <p>
-    &copy; 2025 My Awesome Website. All rights reserved.
-  </p>
- </footer>
-      <footer>
-        <p><a href="martategegne2015@gmail.com">email address</a></p>
-      </footer>
-            <footer>
-              <p><a href="/privacy">privacy policy</a></p>
-            </footer>
-            
-                     <footer>
-                              <address> Location: <br>
-                                Addis Ababa 4kilo
-                              </address>
-                            </footer>
-                            <br>
-                            <footer>
-                      <nav>
-                        
-                          <li>
-                          <a href="index.html">home</a>
-                          <a href="about.html">about</a>
-                          <a href="contact.html">contact</a>
-                          <a href="gallery.html">gallery</a>
-                        </li>
-                      </nav>
-                    </footer>
-                    <br>
-  
-</body>
-</html>
+    </body>
+    </html>

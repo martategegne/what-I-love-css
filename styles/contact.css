@@ -1,3 +1,393 @@
-h1{
-  color:green ;
+/* --- Global Styling / Reset --- */
+/* Universal Box-Sizing for easier layout */
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-family: 'Arial', sans-serif; /* Keep consistent font */
+    color: #333;
+    background-color: #f8f8f8; /* Light background for the page */
+}
+
+
+/* Remove default margins/paddings from elements often used for layout */
+h1, h2, h3, p, ul, ol, figure, address {
+    margin-top: 0;
+    margin-bottom: 0; /* Reset margins to control them explicitly */
+}
+
+a {
+    text-decoration: none;
+    color: inherit; /* Links inherit color by default, styled explicitly later */
+}
+
+/* Responsive media */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Ensure it's a block element */
+}
+
+/* Centralize main content wrapper if you choose to use one */
+/* For this contact page, the form will likely be the central item,
+   so a 'main' tag might wrap the form and headings. */
+.container { /* Using a generic container for main content */
+    max-width: 900px; /* Slightly smaller max-width for contact page content */
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+
+/* --- Header and Navigation Styling --- */
+/* Consistent with site-wide navigation */
+header {
+    background-color: #2c3e50; /* Darker header background */
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.main-nav { /* This will replace your `nav` element's styling */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px; /* Adjust if your header width differs */
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Updated styling for your .L links to match .nav-link */
+.L { /* Class for your navigation links */
+    color: white;
+    padding: 10px 20px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.L:hover {
+    background-color: #34495e;
+    color: #a2e8e8;
+}
+
+/* Highlight the active (current) page */
+.L[href="contact.html"] { /* Target the contact link specifically */
+    background-color: #007bff; /* Example highlight color */
+    color: white;
+}
+
+
+/* --- Headings Styling (h1, h2, h3) --- */
+
+h1 {
+    color: #007bff; /* Primary blue color */
+    font-size: 2.8em;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+h2 {
+    color: #34495e; /* Darker grey-blue color */
+    font-size: 2em;
+    text-align: center;
+    margin-top: 50px; /* More space above new sections */
+    margin-bottom: 30px;
+}
+
+h3 { /* Added H3 styling based on the new aesthetic */
+    color: #555; /* Slightly lighter than H2 */
+    font-size: 1.6em;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* --- Paragraphs --- */
+.paragraph, .paragraph1 {
+    font-size: 1.1em;
+    text-align: center;
+    margin-bottom: 25px; /* Increased margin for better separation */
+    max-width: 700px; /* Slightly narrower for contact info */
+    margin-left: auto;
+    margin-right: auto;
+    color: #444; /* Slightly darker text for readability */
+}
+
+/* --- Social Media Icons (.imgc) --- */
+/* Adjusting to fit the cleaner, flatter style if needed, or keep existing */
+.social-icons-container { /* A new wrapper to center your icons more easily */
+    text-align: center;
+    margin: 30px 0;
+}
+
+.imgc {
+    display: inline-block;
+    margin: 0 15px; /* More generous spacing between icons */
+    vertical-align: middle;
+    width: 80px; /* Example fixed width, adjust as needed */
+    height: auto;
+    border-radius: 8px; /* Slightly larger border-radius */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* More pronounced shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imgc:hover {
+    transform: translateY(-5px) scale(1.05); /* Lift and slightly enlarge on hover */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+
+/* --- Form Styling --- */
+form {
+    background-color: white;
+    padding: 40px; /* More generous padding */
+    border-radius: 10px; /* More rounded corners */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+    max-width: 650px; /* Adjusted max width */
+    margin: 40px auto;
+    display: grid; /* Using grid for form layout for better alignment */
+    grid-template-columns: 1fr; /* Single column layout by default */
+    gap: 20px; /* Space between form elements */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px; /* Reduced margin, as gap will provide spacing */
+    font-weight: bold;
+    color: #555; /* Consistent label color */
+    font-size: 1em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%; /* Full width within its grid cell */
+    padding: 12px 15px; /* More padding */
+    border: 1px solid #ccd; /* Softer border color */
+    border-radius: 6px; /* More rounded input fields */
+    font-size: 1.05em;
+    color: #333;
+    background-color: #fefefe;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+    outline: none; /* Remove default outline */
+    border-color: #007bff; /* Highlight border on focus */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2); /* Soft blue glow on focus */
+}
+
+textarea {
+    min-height: 120px; /* Slightly larger min-height for comments */
+}
+
+.button {
+    display: block;
+    width: 180px; /* Slightly wider button */
+    padding: 15px 25px; /* More padding */
+    background-color: #007bff; /* Primary blue for button */
+    color: white;
+    border: none;
+    border-radius: 8px; /* More rounded button */
+    font-size: 1.15em; /* Larger font for button */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 30px auto 0; /* Center the button, more top margin */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+
+/* --- Footer Styling --- */
+/* Consistent with site-wide footer */
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 60px; /* Consistent margin from main content */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.15);
+}
+
+footer p, footer address {
+    margin-bottom: 10px;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+footer a {
+    color: #a2e8e8; /* Lighter blue for footer links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #007bff; /* Primary blue on hover */
+    text-decoration: underline;
+}
+
+.footer-nav ul { /* This targets the <ul> inside the footer's <nav> */
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.footer-nav ul li {
+    margin: 0 15px; /* Consistent spacing */
+}
+
+.footer-nav ul li a {
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.footer-nav ul li a:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* --- Responsiveness --- */
+
+@media (max-width: 768px) {
+    body {
+        padding: 0; /* Remove body padding, let containers handle it */
+    }
+
+    .container {
+        margin: 15px auto;
+        padding: 0 10px; /* Reduce horizontal padding */
+    }
+
+    .main-nav {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .L {
+        margin: 5px 0;
+        width: 90%; /* Make links wider */
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2.2em;
+        margin-top: 25px;
+    }
+
+    h2 {
+        font-size: 1.7em;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        font-size: 1.4em;
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+
+    .paragraph, .paragraph1 {
+        font-size: 1em;
+        margin-bottom: 15px;
+        padding: 0 10px;
+    }
+
+    .imgc {
+        width: 70px; /* Adjust size for smaller screens */
+        margin: 0 10px;
+    }
+
+    form {
+        padding: 25px; /* Reduce form padding */
+        margin: 25px auto;
+        gap: 15px; /* Reduce gap between form elements */
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    .button {
+        width: 150px;
+        padding: 12px 20px;
+        font-size: 1em;
+        margin-top: 20px;
+    }
+
+    footer {
+        padding: 30px 10px;
+    }
+
+    .footer-nav ul li {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    .imgc {
+        width: 60px;
+        margin: 0 8px;
+    }
+
+    form {
+        padding: 20px;
+        margin: 15px auto;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+        padding: 8px;
+        font-size: 0.95em;
+    }
+
+    .button {
+        width: 130px;
+        padding: 10px 15px;
+        font-size: 0.95em;
+    }
 }
